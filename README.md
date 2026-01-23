@@ -27,8 +27,7 @@ Apasionado por crear soluciones digitales que optimizan procesos y mejoran la ex
 * **Integración ERP:** Conexión directa con **Odoo** para la automatización de procesos internos, incluyendo la gestión de pedidos y facturación.
 * **UX & SEO:** Planificación y análisis de la estructura del sitio para mejorar la experiencia de usuario y maximizar la visibilidad en buscadores.
 
-[Ver Preview](#)
-
+[Ver Preview](https://www.pacmalex.com/)
 ---
 
 ## 🧑‍💻 Sobre mí
@@ -43,7 +42,7 @@ Mi objetivo es seguir evolucionando como desarrollador, aportando soluciones que
 
 ¿Buscas optimizar tus procesos o desarrollar una nueva plataforma web? **Hablemos.**
 
-[Email](mailto:antonio6.jimenez6@gmail.com) • [LinkedIn](https://www.linkedin.com) • [GitHub](#)
+[Email](mailto:antonio6.jimenez6@gmail.com) • [LinkedIn](https://www.linkedin.com/in/antonio-jimnez/) • [GitHub](https://github.com/ajimenez-11)
 
 ---
 
