@@ -22,7 +22,8 @@ Apasionado por crear soluciones digitales que optimizan procesos y mejoran la ex
 
 ## 📂 Proyectos Destacados
 
-### **Pacmalex — Web Corporativa (Filial de TIPSA)** **Tecnologías:** `HTML` | `CSS` | `JavaScript` | `Odoo`
+### **Pacmalex — Web Corporativa (Filial de TIPSA)** 
+**Tecnologías:** `HTML` | `CSS` | `JavaScript` | `Odoo`
 
 * **Digitalización:** Desarrollo de la web corporativa oficial de Pacmalex, enfocada en la optimización de la estructura y organización de contenidos.
 * **Integración ERP:** Conexión directa con **Odoo** para la automatización de procesos internos, incluyendo la gestión de pedidos y facturación.
