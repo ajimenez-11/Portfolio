@@ -1,0 +1,49 @@
+---
+const personalImageAlt = "Antonio Jiménez"
+import Badge from "@/components/Badge.astro"
+import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import MailIcon from "@/components/icons/Mail.astro"
+import FileCVIcon from "@/components/icons/CV.astro";
+---
+
+<div class="flex flex-col md:flex-row items-center justify-between w-full max-w-6xl mx-auto px-4 py-10 gap-10">
+  <!-- SECCIÓN DE TEXTO -->
+  <div class="w-full md:w-[65%]">
+    <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
+      Hola, soy <br />Antonio Jiménez
+    </h1>
+    <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-[#A78BFA] [&>strong]:text-[#A78BFA] [&>strong]:font-semibold dark:text-gray-300">
+      <strong>Desarrollador Aplicaciones Web</strong><br />
+      Enfocado en crear aplicaciones web adaptadas a cada necesidad.
+    </p>
+    <nav class="flex flex-wrap gap-4 mt-8">
+      <a href="mailto:antonio6.jimenez6@gmail.com">
+        <Badge>
+          <MailIcon class="size-4" />
+          Contáctame
+        </Badge>
+      </a>
+      <a href="https://linkedin.com/in/antonio-jimnez/">
+        <Badge>
+          <LinkedInIcon class="size-4" /> 
+          LinkedIn
+        </Badge>
+      </a>
+      <a href="/Antonio_Jimenez_CV.pdf" download="Antonio_Jimenez_CV.pdf">
+        <Badge>       
+          <FileCVIcon class="size-4" />
+          Descargar CV
+        </Badge>
+      </a>
+    </nav>
+  </div>
+
+  <!-- SECCIÓN DE IMAGEN -->
+  <div class="w-full md:w-[35%] flex justify-center">
+    <img
+      class="rounded-full shadow-lg w-72 h-72 object-cover"
+      src="/ajimenez.png"
+      alt={personalImageAlt}
+    />
+  </div>
+</div>

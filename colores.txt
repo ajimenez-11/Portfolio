@@ -1,0 +1,3 @@
+morado fuerte --> #8B5CF6
+morado claro --> #A78BFA
+animaciones --> #C084FC
