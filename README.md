@@ -1,6 +1,7 @@
 # 👋 Hola, soy Antonio Jiménez
 
 **Desarrollador de Aplicaciones Web | Especialista en Odoo** 
+
 Apasionado por crear soluciones digitales que optimizan procesos y mejoran la experiencia del usuario.
 
 [Contáctame](mailto:antonio6.jimenez6@gmail.com) • [LinkedIn](https://www.linkedin.com) • [Descargar CV](#)
