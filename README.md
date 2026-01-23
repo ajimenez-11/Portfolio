@@ -1,66 +1,48 @@
 # 👋 Hola, soy Antonio Jiménez
 
-**Full Stack Developer | Odoo Specialist** Especializado en la optimización de procesos empresariales y el desarrollo de aplicaciones web de alto rendimiento.
+**Desarrollador de Aplicaciones Web | Especialista en Odoo** Apasionado por crear soluciones digitales que optimizan procesos y mejoran la experiencia del usuario.
 
 [Contáctame](mailto:antonio6.jimenez6@gmail.com) • [LinkedIn](https://www.linkedin.com) • [Descargar CV](#)
 
 ---
 
-## 💼 Experiencia Profesional
+## 💼 Experiencia Laboral
 
 ### **Odoo Developer — Pyming** *Julio 2025 - Actualidad*
 
 * **Desarrollo Backend:** Creación e implementación de módulos personalizados utilizando **Python, XML y el ORM de Odoo**.
-* **Integraciones:** Automatización de flujos de facturación mediante la conexión de **APIs externas** y gestión de bases de datos **PostgreSQL**.
-* **Optimización:** Desarrollo de sitios web integrados con Odoo, aplicando estrategias de **SEO técnico** y mejora de procesos internos.
-* **Consultoría Técnica:** Adaptación de funcionalidades estándar para cubrir necesidades específicas de negocio.
+* **Integraciones y Automatización:** Gestión de bases de datos **PostgreSQL** y conexión a **APIs** para automatizar flujos críticos como la facturación.
+* **Optimización Web:** Desarrollo e integración de sitios web optimizados bajo buenas prácticas de **SEO**, mejorando la visibilidad y la eficiencia de procesos internos.
+* **Adaptabilidad:** Ajuste de funcionalidades del ERP según los requerimientos técnicos de cada cliente.
 
 ---
 
 ## 📂 Proyectos Destacados
 
-### **SVGL — Biblioteca de logos SVG** **Tecnologías:** `Next.js` | `Tailwind CSS` | `React`
+### **Pacmalex — Web Corporativa (Filial de TIPSA)** **Tecnologías:** `HTML` | `CSS` | `JavaScript` | `Odoo`
 
-* Desarrollo de una biblioteca de recursos optimizados para desarrolladores y diseñadores.
-* **Impacto:** Logro de +10k visitas mensuales y más de 2,000 descargas de activos.
-* Enfoque en rendimiento web y arquitectura de componentes reutilizables.
+* **Digitalización:** Desarrollo de la web corporativa oficial de Pacmalex, enfocada en la optimización de la estructura y organización de contenidos.
+* **Integración ERP:** Conexión directa con **Odoo** para la automatización de procesos internos, incluyendo la gestión de pedidos y facturación.
+* **UX & SEO:** Planificación y análisis de la estructura del sitio para mejorar la experiencia de usuario y maximizar la visibilidad en buscadores.
 
-[Ver Código](#) • [Demo en Vivo](#)
-
-### **Pacmalex — Web Corporativa (Filial de TIPSA)** **Tecnologías:** `Next.js` | `Tailwind CSS` | `Odoo API`
-
-* Digitalización integral de la plataforma, conectando el front-end con el ecosistema **Odoo**.
-* Automatización de la **gestión de pedidos y facturación** mediante integración de datos en tiempo real.
-* Planificación de arquitectura web enfocada a la conversión y el posicionamiento orgánico (SEO).
-
-[Explorar Proyecto](#)
-
----
-
-## 🚀 Habilidades Técnicas
-
-| Área | Tecnologías |
-| :--- | :--- |
-| **Backend** | Python, Odoo ORM, PostgreSQL, REST APIs |
-| **Frontend** | React, Next.js, Tailwind CSS, JavaScript (ES6+) |
-| **Herramientas** | Git, Docker, SEO Técnico, XML, Linux |
+[Ver Preview](#)
 
 ---
 
 ## 🧑‍💻 Sobre mí
 
-Soy un desarrollador con mentalidad analítica, actualmente finalizando mis estudios en **Desarrollo de Aplicaciones Web (DAW)**. Mi enfoque principal es diseñar soluciones digitales que no solo funcionen, sino que aporten valor real al usuario y eficiencia a la empresa.
+Soy estudiante de **Desarrollo de Aplicaciones Web (DAW)** con un fuerte enfoque en la resolución de problemas mediante tecnología. Mi experiencia se centra en el ecosistema de **Odoo**, la automatización de procesos mediante APIs y la creación de interfaces web funcionales.
 
-Me apasiona la intersección entre la robustez de los sistemas ERP y la agilidad de las tecnologías web modernas.
+Mi objetivo es seguir evolucionando como desarrollador, aportando soluciones que combinen análisis técnico, creatividad y un impacto real en la eficiencia operativa de las empresas.
 
 ---
 
 ## 📞 Contacto
 
-¿Tienes un proyecto en mente o buscas un desarrollador para tu equipo? **Hablemos.**
+¿Buscas optimizar tus procesos o desarrollar una nueva plataforma web? **Hablemos.**
 
 [Email](mailto:antonio6.jimenez6@gmail.com) • [LinkedIn](https://www.linkedin.com) • [GitHub](#)
 
 ---
 
-© 2026 Antonio Jiménez.
+© 2026 Antonio Jiménez. Todos los derechos reservados.
