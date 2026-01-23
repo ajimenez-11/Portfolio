@@ -10,7 +10,8 @@ Apasionado por crear soluciones digitales que optimizan procesos y mejoran la ex
 
 ## 💼 Experiencia Laboral
 
-### **Odoo Developer — Pyming** *Julio 2025 - Actualidad*
+### **Odoo Developer — Pyming** 
+*Julio 2025 - Actualidad*
 
 * **Desarrollo Backend:** Creación e implementación de módulos personalizados utilizando **Python, XML y el ORM de Odoo**.
 * **Integraciones y Automatización:** Gestión de bases de datos **PostgreSQL** y conexión a **APIs** para automatizar flujos críticos como la facturación.
