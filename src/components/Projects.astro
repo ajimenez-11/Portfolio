@@ -2,6 +2,13 @@
 import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import Python from "./icons/Python.astro"
+import JS from "./icons/JS.astro"
+import XML from "./icons/XML.astro"
+import HTML from "./icons/HTML.astro"
+import CSS from "./icons/CSS.astro"
+import Odoo from "./icons/Odoo.astro"
+import SEO from "./icons/SEO.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
@@ -16,16 +23,51 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  PYTHON: {
+    name: "Python",
+    class: "bg-black text-white",
+    icon: Python,
+  },
+  JS: {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: JS,
+  },
+  XML: {
+    name: "XML",
+    class: "bg-black text-white",
+    icon: XML,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-black text-white",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-black text-white",
+    icon: CSS,
+  },
+  Odoo: {
+    name: "Odoo",
+    class: "bg-black text-white",
+    icon: Odoo,
+  },
+  SEO: {
+    name: "Seo",
+    class: "bg-black text-white",
+    icon: SEO,
+  },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Pyming Timesheet Hours Notify - Automatización de Notificaciones",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
+      "Desarrollo de módulo en Odoo para automatizar notificaciones de horas validadas a clientes. Implementación de Cron con selección inteligente de destinatarios y gestión automática de errores mediante actividades de seguimiento, optimizando la comunicación entre proyectos y facturación.",
     link: "https://svgl.vercel.app/",
     github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    image: "/projects/timesheet_hours.png",
+    tags: [TAGS.PYTHON, TAGS.XML, TAGS.Odoo],
   },
   {
     title: "Pacmalex – Web corporativa de la filial de TIPSA",
@@ -33,7 +75,7 @@ const PROJECTS = [
       "Desarrollo de la web corporativa de Pacmalex, filial de TIPSA, aplicando SEO para mejorar visibilidad. Integración con Odoo para automatizar procesos internos como pedidos y facturación. Planificación y análisis de la estructura del sitio para optimizar la experiencia de usuario y la organización de contenidos.",
     link: "https://www.pacmalex.com/",
     image: "/projects/pacmalex.png",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JS, TAGS.Odoo, TAGS.SEO],
   },
 ]
 ---
@@ -44,7 +86,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt={title} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
     </div>
   </div>
 
