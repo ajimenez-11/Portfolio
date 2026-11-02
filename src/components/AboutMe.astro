@@ -1,26 +1,35 @@
 ---
-const personalImageAlt = "Antonio Jiménez"
+import { PROFILE } from "@/data/profile"
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
   <div
-    class="[&>p]:mb-4 [&>p>strong]:text-[#A78BFA] dark:[&>p>strong]:text-[#A78BFA] [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    class="[&>p]:mb-4 [&>p>strong]:text-[#A78BFA] [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
   >
     <p>
-           Me llamo <strong>Antonio Jiménez</strong> y soy estudiante de <strong>Desarrollo de Aplicaciones Web</strong>. Apasionado por la programación y el desarrollo de soluciones digitales que faciliten procesos y mejoren la experiencia del usuario.
+      Me llamo <strong>{PROFILE.fullName}</strong> y soy <strong>desarrollador Odoo</strong> en
+      <strong>PYMING</strong>, una consultora especializada en Odoo en Mataró. Empecé allí en prácticas en julio de 2025
+      y desde febrero de 2026 formo parte del equipo a jornada completa.
     </p>
 
     <p>
-            He trabajado en proyectos con Odoo, automatización de procesos mediante APIs y creación de sitios web optimizados, aplicando buenas prácticas de SEO y gestión de bases de datos. 
+      Mi día a día consiste en convertir las necesidades de cada cliente en <strong>módulos a medida</strong>:
+      trabajo con Python, XML, QWeb, el ORM de Odoo y PostgreSQL, e integro el ERP con APIs externas para
+      automatizar tareas como la facturación o las notificaciones a clientes.
     </p>
 
     <p>
-            Mi objetivo es seguir creciendo como desarrollador, adquiriendo experiencia práctica y contribuyendo a proyectos que generen un impacto real, combinando creatividad, análisis y habilidades técnicas.
+      Me formé en <strong>Desarrollo de Aplicaciones Web</strong> y en <strong>Sistemas Microinformáticos y Redes</strong>,
+      lo que me da una visión completa, desde la infraestructura hasta la aplicación. Me motiva seguir creciendo, aprender
+      buenas prácticas y construir soluciones con impacto real. Hablo catalán y castellano de forma nativa e inglés a nivel intermedio.
     </p>
   </div>
 
-  <img width="200" height="200" src="/me.jpeg" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
+  <img
+    width="200"
+    height="200"
+    src="/me.jpeg"
+    alt={PROFILE.name}
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+  />
 </article>
-
-
-
