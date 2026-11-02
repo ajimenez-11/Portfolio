@@ -33,13 +33,6 @@ export const EXPERIENCE = [
     description:
       "Desarrollo e implementación de módulos personalizados en Odoo con Python y XML, adaptando funcionalidades a las necesidades de cada cliente. Automatización de procesos mediante APIs y PostgreSQL, y desarrollo de sitios web optimizados aplicando buenas prácticas de SEO.",
   },
-  {
-    date: "Septiembre 2023 - Abril 2024",
-    title: "Técnico informático · Prácticas",
-    company: "Escola Rocafonda · Mataró",
-    description:
-      "Mantenimiento de la infraestructura tecnológica de un entorno educativo: soporte técnico a alumnado y profesorado, instalación y configuración de equipos y sistemas operativos, y resolución de incidencias.",
-  },
 ]
 
 export const EDUCATION = [
