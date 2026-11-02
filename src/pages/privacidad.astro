@@ -1,0 +1,136 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import { PROFILE, SITE_URL } from "@/data/profile"
+
+const updated = "2 de noviembre de 2026"
+const domain = new URL(SITE_URL).host
+---
+
+<Layout
+  title={`Privacidad y aviso legal - ${PROFILE.name}`}
+  description={`Política de privacidad, aviso legal e información sobre cookies de ${domain}.`}
+>
+  <main class="px-4">
+    <SectionContainer class="py-32">
+      <article
+        class="text-gray-700 dark:text-gray-300 text-pretty
+        [&_h1]:text-4xl [&_h1]:font-bold [&_h1]:text-gray-900 dark:[&_h1]:text-white
+        [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-gray-900 dark:[&_h2]:text-white
+        [&_h3]:mt-6 [&_h3]:mb-2 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-gray-900 dark:[&_h3]:text-white
+        [&_p]:mb-4 [&_ul]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:mb-1
+        [&_a]:text-[#7C3AED] dark:[&_a]:text-[#A78BFA] [&_a:hover]:underline"
+      >
+        <h1>Privacidad y aviso legal</h1>
+        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Última actualización: {updated}</p>
+
+        <h2 id="aviso-legal">1. Aviso legal</h2>
+        <p>
+          En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico
+          (LSSI-CE), se informa de los datos del titular de este sitio web:
+        </p>
+        <ul>
+          <li><strong>Titular:</strong> {PROFILE.name}</li>
+          <li><strong>Ubicación:</strong> {PROFILE.location}, España</li>
+          <li><strong>Email de contacto:</strong> {PROFILE.email}</li>
+          <li><strong>Sitio web:</strong> {domain}</li>
+        </ul>
+        <p>
+          Este sitio es un portfolio personal cuyo único fin es mostrar la experiencia, formación y proyectos de su titular.
+          No ofrece la venta de productos ni servicios a través de la web.
+        </p>
+
+        <h3>Propiedad intelectual</h3>
+        <p>
+          Los textos, imágenes y el diseño de este sitio pertenecen a su titular, salvo los logotipos y marcas de terceros,
+          que pertenecen a sus respectivos propietarios. No está permitida su reproducción con fines comerciales sin
+          autorización previa.
+        </p>
+
+        <h3>Enlaces externos</h3>
+        <p>
+          Este sitio contiene enlaces a webs de terceros (por ejemplo, LinkedIn o GitHub). El titular no se hace
+          responsable de su contenido ni de sus políticas de privacidad.
+        </p>
+
+        <h2 id="privacidad">2. Política de privacidad</h2>
+        <p>
+          Esta política explica cómo se tratan los datos personales que facilitas a través de este sitio, de acuerdo con el
+          Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD).
+        </p>
+
+        <h3>Responsable del tratamiento</h3>
+        <p>{PROFILE.name} · {PROFILE.email}</p>
+
+        <h3>Qué datos se recogen</h3>
+        <p>
+          Solo los que escribes voluntariamente en el formulario de contacto: <strong>nombre, email, asunto y mensaje</strong>.
+          No se recogen datos especialmente protegidos ni se crean perfiles.
+        </p>
+
+        <h3>Para qué se usan</h3>
+        <p>
+          Únicamente para leer tu mensaje y responderte. No se usan para enviar publicidad ni se ceden a terceros con fines
+          comerciales.
+        </p>
+
+        <h3>Base legal</h3>
+        <p>
+          Tu <strong>consentimiento</strong> (art. 6.1.a RGPD), que das al marcar la casilla de aceptación antes de enviar
+          el formulario. Puedes retirarlo en cualquier momento escribiendo a {PROFILE.email}.
+        </p>
+
+        <h3>Cuánto tiempo se conservan</h3>
+        <p>
+          El tiempo necesario para atender tu consulta y, como máximo, <strong>un año</strong> desde el último contacto,
+          salvo que exista una relación posterior (por ejemplo, profesional) que justifique conservarlos más tiempo.
+        </p>
+
+        <h3>Quién trata los datos además del titular</h3>
+        <ul>
+          <li>
+            <strong>FormSubmit</strong> (formsubmit.co): servicio que recibe el formulario y lo reenvía por email al
+            titular. Actúa como encargado del tratamiento y sus servidores pueden estar fuera del Espacio Económico Europeo.
+          </li>
+          <li>
+            <strong>Google (Gmail)</strong>: proveedor del buzón de correo donde se reciben y responden los mensajes.
+          </li>
+          <li>
+            <strong>GitHub Pages</strong> (GitHub, Inc.): alojamiento de la web. Como cualquier servidor, puede registrar
+            datos técnicos como la dirección IP por motivos de seguridad.
+          </li>
+        </ul>
+        <p>
+          Estos proveedores pueden realizar transferencias internacionales de datos, amparadas en los mecanismos previstos
+          por el RGPD (como las cláusulas contractuales tipo o el Marco de Privacidad de Datos UE-EE. UU.).
+        </p>
+
+        <h3>Tus derechos</h3>
+        <p>
+          Puedes ejercer tus derechos de <strong>acceso, rectificación, supresión, oposición, limitación del tratamiento y
+          portabilidad</strong> escribiendo a <a href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>. Si consideras que
+          tus datos no se han tratado correctamente, puedes presentar una reclamación ante la
+          <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos</a>.
+        </p>
+
+        <h2 id="cookies">3. Cookies</h2>
+        <p>
+          Este sitio <strong>no utiliza cookies</strong> propias ni de terceros, ni herramientas de analítica o publicidad.
+        </p>
+        <p>
+          Solo se guarda en tu navegador (mediante <em>localStorage</em>) tu preferencia de tema claro u oscuro, cuando la
+          eliges. Es un dato técnico necesario para recordar tu elección, no identifica a nadie y puedes borrarlo desde la
+          configuración de tu navegador. Por eso no se muestra ningún aviso de cookies.
+        </p>
+
+        <h2>4. Cambios</h2>
+        <p>
+          Esta página puede actualizarse si cambia el funcionamiento del sitio. La fecha de la última actualización aparece
+          al principio.
+        </p>
+
+        <p class="mt-12"><a href="/">← Volver al inicio</a></p>
+      </article>
+    </SectionContainer>
+  </main>
+</Layout>
