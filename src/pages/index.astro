@@ -2,6 +2,7 @@
 import Layout from "@/layouts/Layout.astro"
 
 import AboutMe from "@/components/AboutMe.astro"
+import Contact from "@/components/Contact.astro"
 import Education from "@/components/Education.astro"
 import Experience from "@/components/Experience.astro"
 import Hero from "@/components/Hero.astro"
@@ -11,6 +12,7 @@ import Skills from "@/components/Skills.astro"
 import TitleSection from "@/components/TitleSection.astro"
 import Briefcase from "@/components/icons/Briefcase.astro"
 import CodeIcon from "@/components/icons/Code.astro"
+import MailIcon from "@/components/icons/Mail.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import School from "@/components/icons/School.astro"
 import { PROFILE } from "@/data/profile"
@@ -64,6 +66,14 @@ import { PROFILE } from "@/data/profile"
           Sobre mí
         </TitleSection>
         <AboutMe />
+      </SectionContainer>
+
+      <SectionContainer id="contacto">
+        <TitleSection>
+          <MailIcon class="size-8" />
+          Contacto
+        </TitleSection>
+        <Contact />
       </SectionContainer>
     </div>
   </main>

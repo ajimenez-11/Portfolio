@@ -1,0 +1,107 @@
+---
+import { PROFILE } from "@/data/profile"
+
+// FormSubmit forwards submissions to this address (no backend needed).
+const endpoint = `https://formsubmit.co/ajax/${PROFILE.email}`
+const inputClass =
+  "w-full rounded-lg border border-gray-300 bg-white/70 px-3 py-2 text-gray-900 placeholder-gray-400 outline-none transition focus:border-[#A78BFA] focus:ring-2 focus:ring-[#A78BFA]/40 dark:border-gray-600 dark:bg-gray-800/70 dark:text-white"
+---
+
+<div class="grid gap-10 md:grid-cols-5">
+  <div class="md:col-span-2 text-gray-700 dark:text-gray-300 space-y-4">
+    <p class="text-pretty">
+      ¿Tienes un proyecto con Odoo, necesitas automatizar procesos o quieres comentar una oportunidad?
+      Escríbeme y te responderé lo antes posible.
+    </p>
+    <p>
+      También puedes escribirme directamente a<br />
+      <a class="text-[#A78BFA] hover:underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
+    </p>
+  </div>
+
+  <form id="contact-form" data-endpoint={endpoint} class="md:col-span-3 space-y-4" novalidate>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        Nombre
+        <input name="name" type="text" required autocomplete="name" maxlength="100" class={`mt-1 ${inputClass}`} />
+      </label>
+      <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+        Email
+        <input name="email" type="email" required autocomplete="email" maxlength="150" class={`mt-1 ${inputClass}`} />
+      </label>
+    </div>
+    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">
+      Mensaje
+      <textarea name="message" required rows="5" maxlength="3000" class={`mt-1 resize-y ${inputClass}`}></textarea>
+    </label>
+
+    <!-- Spam trap: real users never fill this -->
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+    <div class="flex flex-wrap items-center gap-4">
+      <button
+        type="submit"
+        class="inline-flex items-center gap-2 rounded-xl bg-[#7C3AED] px-5 py-2.5 font-medium text-white transition hover:bg-[#6D28D9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A78BFA] disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        Enviar mensaje
+      </button>
+      <p id="contact-status" role="status" aria-live="polite" class="text-sm"></p>
+    </div>
+  </form>
+</div>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const form = document.getElementById("contact-form") as HTMLFormElement | null
+    const status = document.getElementById("contact-status")
+    if (!form || !status || form.dataset.bound) return
+    form.dataset.bound = "true"
+
+    const setStatus = (text: string, ok: boolean) => {
+      status.textContent = text
+      status.className = `text-sm ${ok ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault()
+      if (!form.checkValidity()) {
+        form.reportValidity()
+        return
+      }
+
+      const data = new FormData(form)
+      if (data.get("_honey")) return
+
+      const button = form.querySelector("button[type=submit]") as HTMLButtonElement
+      button.disabled = true
+      button.textContent = "Enviando…"
+      status.textContent = ""
+
+      try {
+        const res = await fetch(form.dataset.endpoint!, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            name: data.get("name"),
+            email: data.get("email"),
+            message: data.get("message"),
+            _replyto: data.get("email"),
+            _subject: `Nuevo mensaje desde ajimenez.app de ${data.get("name")}`,
+            _template: "table",
+            _captcha: "false",
+          }),
+        })
+        const json = await res.json().catch(() => ({}))
+        if (!res.ok || json.success === "false" || json.success === false) throw new Error(json.message)
+
+        form.reset()
+        setStatus("¡Gracias! Tu mensaje se ha enviado. Te responderé pronto.", true)
+      } catch {
+        setStatus("No se ha podido enviar. Inténtalo de nuevo o escríbeme por email.", false)
+      } finally {
+        button.disabled = false
+        button.textContent = "Enviar mensaje"
+      }
+    })
+  })
+</script>
