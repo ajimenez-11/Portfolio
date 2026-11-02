@@ -15,7 +15,16 @@ const inputClass =
     </p>
     <p>
       También puedes escribirme directamente a<br />
-      <a class="text-[#A78BFA] hover:underline" href={`mailto:${PROFILE.email}`}>{PROFILE.email}</a>
+      <button
+        id="copy-email"
+        type="button"
+        data-email={PROFILE.email}
+        class="text-[#A78BFA] hover:underline text-left"
+        title="Copiar email"
+      >
+        {PROFILE.email}
+      </button>
+      <span id="copy-email-status" class="ml-2 text-sm text-green-600 dark:text-green-400" aria-live="polite"></span>
     </p>
   </div>
 
@@ -52,6 +61,21 @@ const inputClass =
 
 <script>
   document.addEventListener("astro:page-load", () => {
+    const copyBtn = document.getElementById("copy-email")
+    const copyStatus = document.getElementById("copy-email-status")
+    if (copyBtn && copyStatus && !copyBtn.dataset.bound) {
+      copyBtn.dataset.bound = "true"
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(copyBtn.dataset.email!)
+          copyStatus.textContent = "¡Copiado!"
+        } catch {
+          copyStatus.textContent = ""
+        }
+        setTimeout(() => (copyStatus.textContent = ""), 2000)
+      })
+    }
+
     const form = document.getElementById("contact-form") as HTMLFormElement | null
     const status = document.getElementById("contact-status")
     if (!form || !status || form.dataset.bound) return
