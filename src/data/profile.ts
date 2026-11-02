@@ -5,7 +5,6 @@ export const SITE_URL = "https://ajimenez.app"
 
 export const PROFILE = {
   name: "Antonio Jiménez",
-  fullName: "Antonio Jiménez Miguel",
   role: "Desarrollador Odoo",
   company: "PYMING",
   tagline:
