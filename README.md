@@ -22,14 +22,11 @@ Apasionado por crear soluciones digitales que optimizan procesos y mejoran la ex
 
 ## 📂 Proyectos Destacados
 
-### **Pacmalex — Web Corporativa (Filial de TIPSA)** 
-**Tecnologías:** `HTML` | `CSS` | `JavaScript` | `Odoo`
+### **Vitalis — Gestión de cocinas profesionales**
+**Tecnologías:** `Laravel` | `PHP` | `JavaScript` | `MySQL` | `Docker`
 
-* **Digitalización:** Desarrollo de la web corporativa oficial de Pacmalex, enfocada en la optimización de la estructura y organización de contenidos.
-* **Integración ERP:** Conexión directa con **Odoo** para la automatización de procesos internos, incluyendo la gestión de pedidos y facturación.
-* **UX & SEO:** Planificación y análisis de la estructura del sitio para mejorar la experiencia de usuario y maximizar la visibilidad en buscadores.
+Aplicación web para cocinas centrales y catering: albaranes, stock en tiempo real, recetas con consumo automático de ingredientes y trazabilidad por lote con alertas de caducidad.
 
-[Ver Preview](https://www.pacmalex.com/)
 ---
 
 ## 🧑‍💻 Sobre mí
