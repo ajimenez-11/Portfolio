@@ -1,38 +1,26 @@
 ---
-import { SKILLS, CERTIFICATIONS, LANGUAGES } from "@/data/profile"
+import { SKILL_GROUPS, CERTIFICATIONS } from "@/data/profile"
 ---
 
-<div class="grid gap-10 md:grid-cols-3 text-gray-700 dark:text-gray-300">
-  <div class="md:col-span-3">
-    <h3 class="mb-3 text-lg font-semibold text-gray-800 dark:text-white">Tecnologías</h3>
-    <ul class="flex flex-wrap gap-2">
-      {
-        SKILLS.map((skill) => (
-          <li class="rounded-full border border-gray-300 bg-gray-100 px-3 py-1 text-sm dark:border-gray-600 dark:bg-gray-800">
-            {skill}
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+<div class="rounded-2xl border border-ink-900/10 bg-white/70 p-6 backdrop-blur dark:border-white/10 dark:bg-white/[0.03]">
+  <h3 class="font-display text-xl font-bold tracking-tight">Habilidades</h3>
+  <dl class="mt-5 space-y-5">
+    {
+      SKILL_GROUPS.map(({ title, items }) => (
+        <div>
+          <dt class="text-xs font-medium uppercase tracking-widest text-brand-600 dark:text-brand-400">{title}</dt>
+          <dd class="mt-2 flex flex-wrap gap-1.5">
+            {items.map((item) => (
+              <span class="rounded-md border border-ink-900/10 px-2.5 py-1 text-sm dark:border-white/10">{item}</span>
+            ))}
+          </dd>
+        </div>
+      ))
+    }
+  </dl>
 
-  <div class="md:col-span-2">
-    <h3 class="mb-3 text-lg font-semibold text-gray-800 dark:text-white">Cursos y certificaciones</h3>
-    <ul class="list-disc pl-5 space-y-1">
-      {CERTIFICATIONS.map((c) => <li>{c}</li>)}
-    </ul>
-  </div>
-
-  <div>
-    <h3 class="mb-3 text-lg font-semibold text-gray-800 dark:text-white">Idiomas</h3>
-    <ul class="space-y-1">
-      {
-        LANGUAGES.map(({ name, level }) => (
-          <li>
-            {name} <span class="text-sm text-gray-500 dark:text-gray-400">· {level}</span>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+  <h4 class="mt-8 text-xs font-medium uppercase tracking-widest text-brand-600 dark:text-brand-400">Cursos</h4>
+  <ul class="mt-2 space-y-1 text-sm text-ink-900/75 dark:text-white/70">
+    {CERTIFICATIONS.map((c) => <li>{c}</li>)}
+  </ul>
 </div>

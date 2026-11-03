@@ -1,0 +1,94 @@
+---
+import Icon from "@/components/ui/Icon.astro"
+import ThemeSwitch from "@/components/ThemeSwitch.astro"
+
+const links = [
+  { label: "Experiencia", id: "experiencia" },
+  { label: "Proyectos", id: "proyectos" },
+  { label: "Formación", id: "formacion" },
+  { label: "Sobre mí", id: "sobre-mi" },
+]
+---
+
+<header class="sticky top-0 z-40 border-b border-ink-900/5 bg-ink-50/75 backdrop-blur-md dark:border-white/5 dark:bg-ink-950/70">
+  <div class="mx-auto flex h-16 max-w-5xl items-center justify-between px-5">
+    <a href="/" class="group flex items-center gap-2.5" aria-label="Antonio Jiménez, inicio">
+      <span class="grid size-9 place-items-center rounded-lg bg-brand-600 font-display text-sm font-bold lowercase tracking-tight text-white transition group-hover:rotate-6">
+        aj
+      </span>
+      <span class="hidden font-display font-semibold tracking-tight sm:block">Antonio Jiménez</span>
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Principal">
+      {
+        links.map(({ label, id }) => (
+          <a
+            href={`/#${id}`}
+            data-nav={id}
+            class="rounded-md px-3 py-2 text-sm text-ink-900/70 transition hover:text-brand-600 dark:text-white/70 dark:hover:text-brand-400 [&.is-active]:text-brand-600 dark:[&.is-active]:text-brand-400"
+          >
+            {label}
+          </a>
+        ))
+      }
+      <a
+        href="/#contacto"
+        class="ml-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-700"
+      >
+        Contacto
+      </a>
+      <span class="mx-2 h-5 w-px bg-ink-900/10 dark:bg-white/10"></span>
+      <ThemeSwitch />
+    </nav>
+
+    <!-- Mobile -->
+    <div class="flex items-center gap-1 md:hidden">
+      <ThemeSwitch />
+      <details class="group relative">
+        <summary
+          class="grid size-10 cursor-pointer list-none place-items-center rounded-lg transition hover:bg-ink-900/5 dark:hover:bg-white/10 [&::-webkit-details-marker]:hidden"
+          aria-label="Abrir menú"
+        >
+          <Icon name="menu" class="size-5" />
+        </summary>
+        <nav
+          class="absolute right-0 top-12 w-52 rounded-xl border border-ink-900/10 bg-white p-2 shadow-xl dark:border-white/10 dark:bg-ink-800"
+          aria-label="Principal móvil"
+        >
+          {
+            links.map(({ label, id }) => (
+              <a href={`/#${id}`} class="block rounded-lg px-3 py-2 text-sm hover:bg-brand-500/10">
+                {label}
+              </a>
+            ))
+          }
+          <a href="/#contacto" class="mt-1 block rounded-lg bg-brand-600 px-3 py-2 text-center text-sm font-medium text-white">
+            Contacto
+          </a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    // Close the mobile menu after choosing a link
+    document.querySelectorAll<HTMLDetailsElement>("header details").forEach((menu) => {
+      menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => menu.removeAttribute("open")))
+    })
+
+    // Highlight the section in view
+    const links = document.querySelectorAll<HTMLAnchorElement>("[data-nav]")
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return
+          links.forEach((link) => link.classList.toggle("is-active", link.dataset.nav === entry.target.id))
+        })
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    )
+    document.querySelectorAll("main section[id]").forEach((section) => observer.observe(section))
+  })
+</script>

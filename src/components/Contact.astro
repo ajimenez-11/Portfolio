@@ -1,8 +1,6 @@
 ---
 import { PROFILE } from "@/data/profile"
-import MailIcon from "./icons/Mail.astro"
-import LinkedInIcon from "./icons/LinkedIn.astro"
-import GitHubIcon from "./icons/GitHub.astro"
+import Icon from "@/components/ui/Icon.astro"
 
 // FormSubmit forwards submissions to this address (no backend needed).
 const endpoint = `https://formsubmit.co/ajax/${PROFILE.email}`
@@ -10,14 +8,14 @@ const MAX_MESSAGE = 2000
 
 const labelClass = "block text-sm font-medium text-gray-700 dark:text-gray-300"
 const inputClass =
-  "mt-1.5 w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-gray-900 placeholder-gray-400 outline-none transition focus:border-[#A78BFA] focus:ring-2 focus:ring-[#A78BFA]/40 dark:border-white/10 dark:bg-gray-900/60 dark:text-white dark:placeholder-gray-500"
+  "mt-1.5 w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-gray-900 placeholder-gray-400 outline-none transition focus:border-brand-400 focus:ring-2 focus:ring-brand-400/40 dark:border-white/10 dark:bg-ink-900/60 dark:text-white dark:placeholder-gray-500"
 ---
 
 <div class="grid gap-8 md:grid-cols-5">
   <!-- Contact info -->
   <aside class="md:col-span-2 space-y-6 text-gray-700 dark:text-gray-300">
     <div>
-      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Hablemos</h3>
+      <h3 class="font-display text-2xl font-bold tracking-tight">Hablemos</h3>
       <p class="mt-2 text-pretty">
         ¿Tienes una propuesta, una pregunta o simplemente quieres saludar? Escríbeme y te responderé lo antes posible.
       </p>
@@ -29,11 +27,11 @@ const inputClass =
           id="copy-email"
           type="button"
           data-email={PROFILE.email}
-          class="group flex w-full items-center gap-3 rounded-xl border border-gray-200 bg-white/60 p-3 text-left transition hover:border-[#A78BFA] dark:border-white/10 dark:bg-white/5"
+          class="group flex w-full items-center gap-3 rounded-xl border border-gray-200 bg-white/60 p-3 text-left transition hover:border-brand-400 dark:border-white/10 dark:bg-white/5"
           aria-label="Copiar email"
         >
-          <span class="grid size-10 shrink-0 place-items-center rounded-lg bg-[#A78BFA]/15 text-[#7C3AED] dark:text-[#A78BFA]">
-            <MailIcon class="size-5" />
+          <span class="grid size-10 shrink-0 place-items-center rounded-lg bg-brand-400/15 text-brand-600 dark:text-brand-400">
+            <Icon name="mail" class="size-5" />
           </span>
           <span class="min-w-0">
             <span class="block text-xs text-gray-500 dark:text-gray-400">Email · <span id="copy-email-status">pulsa para copiar</span></span>
@@ -46,10 +44,10 @@ const inputClass =
           href={PROFILE.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-3 rounded-xl border border-gray-200 bg-white/60 p-3 transition hover:border-[#A78BFA] dark:border-white/10 dark:bg-white/5"
+          class="flex items-center gap-3 rounded-xl border border-gray-200 bg-white/60 p-3 transition hover:border-brand-400 dark:border-white/10 dark:bg-white/5"
         >
-          <span class="grid size-10 shrink-0 place-items-center rounded-lg bg-[#A78BFA]/15 text-[#7C3AED] dark:text-[#A78BFA]">
-            <LinkedInIcon class="size-5" />
+          <span class="grid size-10 shrink-0 place-items-center rounded-lg bg-brand-400/15 text-brand-600 dark:text-brand-400">
+            <Icon name="linkedin" class="size-5" />
           </span>
           <span>
             <span class="block text-xs text-gray-500 dark:text-gray-400">LinkedIn</span>
@@ -62,10 +60,10 @@ const inputClass =
           href={PROFILE.github}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-3 rounded-xl border border-gray-200 bg-white/60 p-3 transition hover:border-[#A78BFA] dark:border-white/10 dark:bg-white/5"
+          class="flex items-center gap-3 rounded-xl border border-gray-200 bg-white/60 p-3 transition hover:border-brand-400 dark:border-white/10 dark:bg-white/5"
         >
-          <span class="grid size-10 shrink-0 place-items-center rounded-lg bg-[#A78BFA]/15 text-[#7C3AED] dark:text-[#A78BFA]">
-            <GitHubIcon class="size-5" />
+          <span class="grid size-10 shrink-0 place-items-center rounded-lg bg-brand-400/15 text-brand-600 dark:text-brand-400">
+            <Icon name="github" class="size-5" />
           </span>
           <span>
             <span class="block text-xs text-gray-500 dark:text-gray-400">GitHub</span>
@@ -82,7 +80,7 @@ const inputClass =
   </aside>
 
   <!-- Form -->
-  <div class="md:col-span-3 rounded-2xl border border-gray-200 bg-white/70 p-6 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+  <div class="md:col-span-3 rounded-2xl border border-gray-200 bg-white/70 p-6 shadow-sm backdrop-blur md:p-8 dark:border-white/10 dark:bg-white/[0.03]">
     <form id="contact-form" data-endpoint={endpoint} class="space-y-4" novalidate>
       <div class="grid gap-4 sm:grid-cols-2">
         <label class={labelClass}>
@@ -121,10 +119,10 @@ const inputClass =
             name="privacy"
             type="checkbox"
             required
-            class="mt-0.5 size-4 shrink-0 rounded border-gray-300 accent-[#7C3AED] dark:border-gray-600"
+            class="mt-0.5 size-4 shrink-0 rounded border-gray-300 accent-brand-600 dark:border-gray-600"
           />
           <span>
-            He leído y acepto la <a href="/privacidad#privacidad" target="_blank" class="text-[#7C3AED] underline dark:text-[#A78BFA]">política de privacidad</a>.
+            He leído y acepto la <a href="/privacidad#privacidad" target="_blank" class="text-brand-600 underline dark:text-brand-400">política de privacidad</a>.
           </span>
         </label>
         <span class="field-error ml-6 mt-1 hidden text-xs text-red-600 dark:text-red-400">Debes aceptar la política de privacidad.</span>
@@ -137,7 +135,7 @@ const inputClass =
       <div class="flex justify-end pt-1">
         <button
           type="submit"
-          class="inline-flex items-center justify-center gap-2 rounded-xl bg-[#7C3AED] px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-[#6D28D9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A78BFA] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 dark:focus-visible:ring-offset-gray-900"
+          class="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 px-5 py-2.5 font-medium text-white shadow-sm transition hover:bg-brand-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 dark:focus-visible:ring-offset-gray-900"
         >
           <svg class="spinner hidden size-4 animate-spin" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" opacity=".25"></circle>
@@ -160,7 +158,7 @@ const inputClass =
       </div>
       <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">¡Mensaje enviado!</h3>
       <p class="mt-1 text-gray-600 dark:text-gray-400">Gracias por escribirme. Te responderé lo antes posible.</p>
-      <button id="contact-again" type="button" class="mt-6 text-sm font-medium text-[#7C3AED] hover:underline dark:text-[#A78BFA]">
+      <button id="contact-again" type="button" class="mt-6 text-sm font-medium text-brand-600 hover:underline dark:text-brand-400">
         Enviar otro mensaje
       </button>
     </div>

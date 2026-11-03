@@ -1,0 +1,49 @@
+---
+import Icon from "@/components/ui/Icon.astro"
+import { PROFILE, LANGUAGES } from "@/data/profile"
+
+const facts = [
+  { icon: "map-pin", label: "Ubicación", value: PROFILE.location },
+  { icon: "school", label: "Formación", value: "Grado Superior en DAW (2024 – 2026)" },
+  { icon: "language", label: "Idiomas", value: LANGUAGES.map((l) => `${l.name} (${l.level.toLowerCase()})`).join(", ") },
+  { icon: "car", label: "Carnet", value: "A1 y B · vehículo propio" },
+] as const
+---
+
+<div class="grid gap-10 md:grid-cols-[1.5fr_1fr]">
+  <div class="space-y-5 text-lg leading-relaxed text-ink-900/75 dark:text-white/70 text-pretty [&_strong]:font-semibold [&_strong]:text-ink-900 dark:[&_strong]:text-white">
+    <p>
+      Soy <strong>desarrollador Odoo en PYMING</strong>, una consultora especializada en Odoo en Mataró. Empecé allí en
+      prácticas en julio de 2025 y desde febrero de 2026 formo parte del equipo a jornada completa.
+    </p>
+    <p>
+      Mi día a día consiste en convertir las necesidades de cada cliente en <strong>módulos a medida</strong>: trabajo con
+      Python, XML, QWeb, el ORM de Odoo y PostgreSQL, e integro el ERP con APIs externas para automatizar tareas como la
+      facturación o las notificaciones a clientes.
+    </p>
+    <p>
+      Me formé en <strong>Desarrollo de Aplicaciones Web</strong> y en <strong>Sistemas Microinformáticos y Redes</strong>,
+      así que entiendo el recorrido completo, desde la infraestructura hasta la aplicación. Me motiva seguir aprendiendo y
+      construir soluciones que se usen de verdad.
+    </p>
+  </div>
+
+  <aside class="h-fit rounded-2xl border border-ink-900/10 bg-white/70 p-6 backdrop-blur dark:border-white/10 dark:bg-white/[0.03]">
+    <h3 class="font-display text-xl font-bold tracking-tight">En resumen</h3>
+    <dl class="mt-5 space-y-4">
+      {
+        facts.map(({ icon, label, value }) => (
+          <div class="flex gap-3">
+            <span class="grid size-9 shrink-0 place-items-center rounded-lg bg-brand-500/15 text-brand-600 dark:text-brand-400">
+              <Icon name={icon} class="size-[18px]" />
+            </span>
+            <div>
+              <dt class="text-xs uppercase tracking-widest text-ink-900/50 dark:text-white/45">{label}</dt>
+              <dd class="text-sm font-medium">{value}</dd>
+            </div>
+          </div>
+        ))
+      }
+    </dl>
+  </aside>
+</div>

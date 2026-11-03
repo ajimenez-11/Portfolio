@@ -20,18 +20,29 @@ export const PROFILE = {
 
 export const EXPERIENCE = [
   {
-    date: "Febrero 2026 - Actualidad",
-    title: "Desarrollador Odoo · Jornada completa",
-    company: "PYMING | Odoo consulting services · Mataró",
-    description:
-      "Desarrollo de módulos personalizados en Odoo con Python, XML y QWeb para clientes de distintos sectores. Análisis de requisitos, uso avanzado del ORM y PostgreSQL, e integración con APIs externas para automatizar procesos como la facturación y la comunicación con clientes.",
-  },
-  {
-    date: "Julio 2025 - Febrero 2026",
-    title: "Desarrollador Odoo · Prácticas",
-    company: "PYMING | Odoo consulting services · Mataró",
-    description:
-      "Desarrollo e implementación de módulos personalizados en Odoo con Python y XML, adaptando funcionalidades a las necesidades de cada cliente. Automatización de procesos mediante APIs y PostgreSQL, y desarrollo de sitios web optimizados aplicando buenas prácticas de SEO.",
+    company: "PYMING",
+    companyDetail: "Odoo consulting services",
+    location: "Mataró",
+    period: "Jul 2025 – actualidad",
+    tags: ["Python", "Odoo", "XML", "QWeb", "PostgreSQL", "APIs REST"],
+    roles: [
+      {
+        title: "Desarrollador Odoo",
+        type: "Jornada completa",
+        date: "Feb 2026 – actualidad",
+        current: true,
+        description:
+          "Desarrollo de módulos personalizados en Odoo con Python, XML y QWeb para clientes de distintos sectores. Análisis de requisitos, uso avanzado del ORM y PostgreSQL, e integración con APIs externas para automatizar procesos como la facturación y la comunicación con clientes.",
+      },
+      {
+        title: "Desarrollador Odoo",
+        type: "Prácticas",
+        date: "Jul 2025 – feb 2026",
+        current: false,
+        description:
+          "Desarrollo e implementación de módulos personalizados en Odoo con Python y XML, adaptando funcionalidades a las necesidades de cada cliente. Automatización de procesos mediante APIs y PostgreSQL, y desarrollo de sitios web optimizados aplicando buenas prácticas de SEO.",
+      },
+    ],
   },
 ]
 
@@ -62,15 +73,32 @@ export const EDUCATION = [
   },
 ]
 
-export const SKILLS = [
-  "Python",
-  "Odoo (ORM, módulos, QWeb)",
-  "PostgreSQL / SQL",
-  "APIs REST e integraciones",
-  "HTML / CSS / JavaScript",
-  "XML",
-  "SEO técnico",
-  "Git / control de versiones",
+export const STACK = ["Python", "Odoo", "PostgreSQL", "Laravel", "Docker"]
+
+export const SKILL_GROUPS = [
+  { title: "Backend", items: ["Python", "Odoo (ORM, módulos, QWeb)", "PHP / Laravel", "APIs REST"] },
+  { title: "Bases de datos", items: ["PostgreSQL", "MySQL", "SQL"] },
+  { title: "Frontend", items: ["HTML", "CSS", "JavaScript", "XML"] },
+  { title: "Herramientas", items: ["Git", "Docker", "GitHub Actions", "SEO técnico"] },
+]
+
+export const PROJECTS: {
+  title: string
+  subtitle: string
+  description: string
+  image: string
+  tags: string[]
+  link?: string
+  github?: string
+}[] = [
+  {
+    title: "Vitalis",
+    subtitle: "Gestión de cocinas profesionales",
+    description:
+      "Aplicación web para cocinas centrales y empresas de catering, desarrollada junto a David Moya como proyecto final de DAW. Digitaliza albaranes de proveedores, controla el stock en tiempo real, descuenta ingredientes automáticamente al producir recetas y ofrece trazabilidad completa por lote con alertas de caducidad. Incluye roles de usuario, panel de control y despliegue con Docker y CI/CD en GitHub Actions.",
+    image: "/projects/vitalis.webp",
+    tags: ["Laravel", "PHP", "JavaScript", "MySQL", "Docker"],
+  },
 ]
 
 export const CERTIFICATIONS = [
