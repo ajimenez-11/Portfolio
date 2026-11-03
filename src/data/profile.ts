@@ -21,6 +21,8 @@ export const PROFILE = {
 export const EXPERIENCE = [
   {
     company: "PYMING",
+    url: "https://pyming.com",
+    logo: { icon: "/logos/pyming-icon.png", light: "/logos/pyming-black.png", dark: "/logos/pyming-white.png" },
     companyDetail: "Odoo consulting services",
     location: "Mataró",
     period: "Jul 2025 – actualidad",
@@ -73,13 +75,26 @@ export const EDUCATION = [
   },
 ]
 
-export const STACK = ["Python", "Odoo", "PostgreSQL", "Laravel", "Docker"]
+// Main stack shown in the hero (icons from Simple Icons)
+export const STACK = [
+  { name: "Odoo", icon: "odoo" },
+  { name: "Python", icon: "python" },
+  { name: "PostgreSQL", icon: "postgresql" },
+  { name: "JavaScript", icon: "javascript" },
+  { name: "Laravel", icon: "laravel" },
+  { name: "Docker", icon: "docker" },
+  { name: "Git", icon: "git" },
+  { name: "Linux", icon: "linux" },
+] as const
 
 export const SKILL_GROUPS = [
-  { title: "Backend", items: ["Python", "Odoo (ORM, módulos, QWeb)", "PHP / Laravel", "APIs REST"] },
+  {
+    title: "Backend y ERP",
+    items: ["Odoo: módulos a medida, ORM, vistas XML, informes QWeb", "Python", "PHP / Laravel", "APIs REST e integraciones"],
+  },
   { title: "Bases de datos", items: ["PostgreSQL", "MySQL", "SQL"] },
-  { title: "Frontend", items: ["HTML", "CSS", "JavaScript", "XML"] },
-  { title: "Herramientas", items: ["Git", "Docker", "GitHub Actions", "SEO técnico"] },
+  { title: "Frontend", items: ["JavaScript", "HTML / CSS", "Vite", "SEO técnico"] },
+  { title: "DevOps", items: ["Docker / Docker Compose", "CI/CD con GitHub Actions", "Linux y SSH", "Git"] },
 ]
 
 export const PROJECTS: {
@@ -97,7 +112,7 @@ export const PROJECTS: {
     description:
       "Aplicación web para cocinas centrales y empresas de catering, desarrollada junto a David Moya como proyecto final de DAW. Digitaliza albaranes de proveedores, controla el stock en tiempo real, descuenta ingredientes automáticamente al producir recetas y ofrece trazabilidad completa por lote con alertas de caducidad. Incluye roles de usuario, panel de control y despliegue con Docker y CI/CD en GitHub Actions.",
     image: "/projects/vitalis.webp",
-    tags: ["Laravel", "PHP", "JavaScript", "MySQL", "Docker"],
+    tags: ["Laravel", "PHP", "JavaScript", "MySQL", "Docker", "GitHub Actions"],
   },
 ]
 

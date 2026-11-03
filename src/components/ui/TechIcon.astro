@@ -1,0 +1,21 @@
+---
+// Technology logos from Simple Icons (CC0). Usage: <TechIcon slug="python" />
+import * as icons from "simple-icons"
+
+interface Props {
+  slug: string
+  class?: string
+}
+
+const { slug, class: className = "size-4" } = Astro.props
+const key = `si${slug.charAt(0).toUpperCase()}${slug.slice(1)}` as keyof typeof icons
+const icon = icons[key] as { path: string } | undefined
+---
+
+{
+  icon && (
+    <svg role="img" viewBox="0 0 24 24" fill="currentColor" class={className} aria-hidden="true">
+      <path d={icon.path} />
+    </svg>
+  )
+}
