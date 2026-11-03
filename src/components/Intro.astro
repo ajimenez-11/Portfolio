@@ -76,13 +76,17 @@ const lastName = rest.join(" ")
 
   <div class="relative mx-auto w-full max-w-[19rem] md:max-w-none">
     <div class="absolute inset-0 translate-x-4 translate-y-4 rounded-[2rem] border-2 border-brand-400/70"></div>
-    <img
-      src="/antonio.webp"
-      alt={PROFILE.name}
-      width="800"
-      height="1000"
-      class="relative aspect-[4/5] w-full rounded-[2rem] object-cover shadow-2xl"
-    />
+    <div class="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-400 via-brand-600 to-ink-900 shadow-2xl">
+      <div class="absolute inset-0 bg-[radial-gradient(rgb(255_255_255/0.18)_1px,transparent_1px)] [background-size:18px_18px]"></div>
+      <div class="absolute -right-10 -top-10 size-40 rounded-full bg-brand-300/40 blur-3xl"></div>
+      <img
+        src="/antonio.webp"
+        alt={PROFILE.name}
+        width="698"
+        height="698"
+        class="absolute left-1/2 top-[45%] w-[84%] -translate-x-1/2 -translate-y-1/2 rounded-full shadow-2xl ring-4 ring-white/20"
+      />
+    </div>
     <div class="absolute -left-4 bottom-6 flex items-center gap-2 rounded-xl border border-ink-900/10 bg-white/90 px-3 py-2 text-sm font-medium shadow-lg backdrop-blur dark:border-white/10 dark:bg-ink-800/90">
       <Icon name="map-pin" class="size-4 text-brand-600 dark:text-brand-400" />
       {PROFILE.location}
