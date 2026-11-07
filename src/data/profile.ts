@@ -34,7 +34,7 @@ export const EXPERIENCE = [
         date: "Feb 2026 – actualidad",
         current: true,
         description:
-          "Desarrollo de módulos personalizados en Odoo con Python, XML y QWeb para clientes de distintos sectores. Análisis de requisitos, uso avanzado del ORM y PostgreSQL, e integración con APIs externas para automatizar procesos como la facturación y la comunicación con clientes.",
+          "Desarrollo de módulos personalizados en Odoo con Python, XML y QWeb para clientes de distintos sectores. Análisis de requisitos, uso avanzado del ORM y PostgreSQL, e integración con APIs y servicios externos para automatizar procesos de negocio de principio a fin.",
       },
       {
         title: "Desarrollador Odoo",
