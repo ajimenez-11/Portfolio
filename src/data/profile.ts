@@ -79,6 +79,8 @@ export const EDUCATION = [
 export const STACK = [
   { name: "Odoo", icon: "odoo" },
   { name: "Python", icon: "python" },
+  { name: "XML", icon: "xml" },
+  { name: "QWeb", icon: "qweb" },
   { name: "PostgreSQL", icon: "postgresql" },
   { name: "JavaScript", icon: "javascript" },
   { name: "Laravel", icon: "laravel" },
@@ -89,10 +91,10 @@ export const STACK = [
 
 export const SKILL_GROUPS = [
   {
-    title: "Backend y ERP",
-    items: ["Odoo: módulos a medida, ORM, vistas XML, informes QWeb", "Python", "PHP / Laravel", "APIs REST e integraciones"],
+    title: "Desarrollo Odoo",
+    items: ["Python", "ORM de Odoo", "Vistas XML", "Plantillas e informes QWeb", "PostgreSQL", "Módulos a medida"],
   },
-  { title: "Bases de datos", items: ["PostgreSQL", "MySQL", "SQL"] },
+  { title: "Backend", items: ["PHP / Laravel", "APIs REST e integraciones", "MySQL", "SQL"] },
   { title: "Frontend", items: ["JavaScript", "HTML / CSS", "Vite", "SEO técnico"] },
   { title: "DevOps", items: ["Docker / Docker Compose", "CI/CD con GitHub Actions", "Linux y SSH", "Git"] },
 ]
